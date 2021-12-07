@@ -19,6 +19,8 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  background-color: #333;
+  height: 200px;
 }
 
 .footer a {
@@ -26,6 +28,7 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  color: white;
 }
 
 .title a {
@@ -107,6 +110,18 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+
+.auth {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.auth a{
+  margin-right: 30px;
+}
+
 
 @media (max-width: 600px) {
   .grid {
