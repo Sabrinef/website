@@ -1,21 +1,13 @@
-import React,{useState , useEffect} from 'react';
-import Link from 'next/link'
+import React,{useState} from 'react';
 import axios from 'axios';
 import {useRouter} from 'next/router'
+import Image from 'next/image'
 
 const Login = () =>{
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
     const [error, setError]= useState("");
     const router  = useRouter();
-
-
-    useEffect(() => {
-        if(localStorage.getItem("authToken")){
-           // router.push("/");
-           console.log("hello");
-        }
-    });
 
     const loginHandler = async (e) =>{
         e.preventDefault();
@@ -44,34 +36,43 @@ const Login = () =>{
 
 
     return(
+<>
+            <div className="container"> 
+                <div className="menu_register" >
+                    <a href="/register">
+                    <Image src="/register.png" alt="register" width={30} height={30}/>
+                    <h4>Register</h4>
+                    <p>Browse and find what you need.</p></a>
+                </div>
 
+                <div className="menu_login">
+                <a href="/login">
+                <Image src="/login.png" alt="register" width={30} height={30}/>
+                    <h4>Sign in</h4>
+                    <p>Already have an account, then welcome.</p></a>
+                    </div>
+                </div>
             
                 <div className="container">
                     <form onSubmit={loginHandler} >
-                        <h1> Login </h1>
-                        <div className="row">
+                        
                         <div className="col-75">
-                            
-                            <input type="email" placeholder="Info@example.com" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} tabIndex={1} />
+                            <input type="email" placeholder="Email*" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} tabIndex={1} />
                         </div>
+                        
+                        <div className="col-75">  
+                            <input type="password" placeholder="Password*" id="password" required value={password} onChange={(e) => setPassword(e.target.value)} tabIndex={2} />
                         </div>
-                        <div className="row">
-                        <div className="col-75">
-                           
-                            <input type="password" placeholder="******" id="password" required value={password} onChange={(e) => setPassword(e.target.value)} tabIndex={2} />
-                        </div>
-                        </div>
+                        
                         {error && <span style={{color:'red'}}>{error}</span>}
-                        <div className="row">
+                        
                         <div className="col-75">
-                            <button type="submit" tabIndex={3} >
-                                Login</button>
+                            <button className="submit" type="submit" tabIndex={3} > Submit</button>
                         </div>
-                        </div>
-                        <span>Don't have an account ? <Link href="/register">Register</Link> </span>
+                        
                     </form>
                 </div>
-            
+     </>       
     )
 }
 

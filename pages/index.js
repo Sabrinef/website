@@ -1,6 +1,3 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import React,{useState , useEffect} from 'react';
 import axios from 'axios';
 
@@ -9,9 +6,6 @@ const Home = () => {
     const [privateData, setPrivateData]= useState("");
 
     useEffect(() => {
-        if(!localStorage.getItem("authToken")){
-            
-        }
 
         const fetchPrivateData = async () =>{
             const config = {
@@ -26,7 +20,7 @@ const Home = () => {
                 setPrivateData(data.data);
             } catch (error) {
                 localStorage.removeItem("authToken");
-                setError("You are not authorized please login")
+                setError("You are not authorized please login !!")
             }
         }
         fetchPrivateData();
@@ -35,18 +29,16 @@ const Home = () => {
    
   
     return error ? (
-        
-        <div className="container">
-           <Image src="/logo.png" alt="logo" width={150} height={150}/>
-           <span>{error}</span>
-      
+        <>
+        <div className="box1">
+         <span>{error}</span> 
      </div>
+    
+     </>
     ) : (
         <>
-       <div className="container">
-           <Image src="/logo.png" alt="logo" width={150} height={150}/>
-      <h1>Welcome</h1>
-      
+        <div className="box1">
+        <div className="logo"><div className="thing"></div></div>         
      </div>
         
         </>

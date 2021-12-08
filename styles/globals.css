@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f2f2f2;
 }
 
 a {
@@ -16,11 +17,13 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  height: 70px;
   background-color: #333;
 }
 
 li {
   float: left;
+  margin-left: 50px;
 }
 
 li a {
@@ -35,40 +38,64 @@ li a:hover {
   background-color: #111;
 }
 
-* {
-  box-sizing: border-box;
+span{
+  color: white;
 }
 
 input {
-  width: 400px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 450px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 6px;
   resize: vertical;
+  margin-top: 10px;
 
 }
 
-button{
-  background-color: #333;
+.menu_register{
+  resize: vertical;
+  width: 239px;
+  height: 100px;
+  border: 0.5px solid black;
+  background-color: white;
+  border-radius: 6px 0 0 6px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.menu_login{
+  resize: vertical;
+  width: 239px;
+  height: 100px;
+  border: 0.5px solid black;
+  background-color: white;
+  border-radius: 0 6px 6px 0;
+  padding: 10px;
+  font-size: 12px;
+  
+}
+
+.submit{
+  background-color: black;
+  margin-left: 190px;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   float: left;
+  margin-top: 50px;
+  width: 100px;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 500px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  border-radius: 5px;
-  background-color: #f2f2f2;
   padding: 50px;
   width: 500px;
+  position: relative;
+  margin-left: 370px;
 }
 
 .col-75 {
@@ -77,13 +104,112 @@ button{
   margin-top: 6px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.box1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 400px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: #333;
+  padding: 50px;
+  width: 500px;
+  height: 250px;
 }
 
+.minilogo{
+  width: 1.5vh;
+  height: 6vh;
+  background-color: #ff8000;
+  position: relative;
+  border-radius: 0px 0px 0px 10px;
+  transform: rotate(50deg);
+  
+}
+.minilogo:before{
+  content: "";
+  position: absolute;
+  width: 3vh;
+  height: 1.5vh;
+  top: 30px;
+  left: 1px;
+  background-color: #ff8000;
+  border-radius: 0px 0px 0px 10px;
+}
+.minilogo:after{
+  content: "";
+  position: absolute;
+  width: 4vh;
+  height: 1.5vh;
+  background-color: #0080ff;
+  border-radius: 0px 0px 0px 10px;
+  transform: rotate(180deg);
+  left: 2.3vh;
+  top: 0.9vh;
+  z-index: -1;
+}
+.minithing{
+  width: 1.5vh;
+  height: 5.5vh;
+  background-color: #0080ff;
+  position: relative;
+  left: 4.8vh;
+  top: 1.5vh;
+  border-radius: 0px 0px 0px 9px;
+  transform: rotate(180deg);
+}
+
+.logo{
+  width: 4vh;
+  height: 12vh;
+  background-color: #ff8000;
+  position: relative;
+  border-radius: 0px 0px 0px 10px;
+  transform: rotate(50deg);
+  
+}
+.logo:before{
+  content: "";
+  position: absolute;
+  width: 10vh;
+  height: 4vh;
+  top: -12px;
+  background-color: #ff8000;
+  border-radius: 0px 0px 0px 10px;
+  margin-top: 70px;
+}
+.logo:after{
+  content: "";
+  position: absolute;
+  width: 10vh;
+  height: 4vh;
+  background-color: #0080ff;
+  border-radius: 0px 0px 0px 10px;
+  transform: rotate(180deg);
+  left: 6vh;
+  top: 2vh;
+  z-index: -1;
+}
+.thing{
+  width: 4vh;
+  height: 13vh;
+  background-color: #0080ff;
+  position: relative;
+  left: 12vh;
+  top: 2vh;
+  border-radius: 0px 0px 0px 10px;
+  transform: rotate(180deg);
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.row input{
+  width: 200px;
+}
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .col-25, .col-75, input[type=submit] {
